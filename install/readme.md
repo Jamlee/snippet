@@ -27,7 +27,7 @@ EOF
 conda create --name snippet python
 export CONDA_BUILD=1
 conda activate snippet
-conda install  nodejs golang gcc_linux-64 gxx_linux-64 jupyter-lab zeromq
+conda install  nodejs go gcc_linux-64 gxx_linux-64 jupyter-lab zeromq
 
 # node
 sed -i install/tgz/package/binding.gup "s/#USERHOME#/$HOME/g"
@@ -38,7 +38,9 @@ npm install -g jp-kernel-2.0.0.tgz; npm install -g zeromq-5.3.1.tgz; npm install
 # go
 export GOPROXY=https://goproxy.io,direct
 export PATH=$HOME/go/bin:$PATH
-go install https://github.com/janpfeifer/gonb gonb --install
+go install github.com/janpfeifer/gonb@latest
+gonb --install
+go install golang.org/x/tools/cmd/goimports@latest
 
 # bash
 pip install bash_kernel&& python -m bash_kernel.install
