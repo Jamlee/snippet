@@ -44,3 +44,31 @@ go install golang.org/x/tools/cmd/goimports@latest
 # bash
 pip install bash_kernel&& python -m bash_kernel.install
 ```
+
+
+可设置服务开机自动启动。[WSL2支持systemd](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/)
+
+```
+cat > /etc/systemd/system/jupyter.service <<EOF
+[Unit]
+Description=jupyter
+After=network.target
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=jam
+Group=jam
+Type=simple
+WorkingDirectory=/data/snippet
+ExecStart=/bin/bash -i start.sh
+Restart=always
+RestartSec=1
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl enable jupyter; systemctl daemon-reload; systemctl start jupyter
+systemctl status jupyter
+```
