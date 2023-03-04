@@ -27,11 +27,10 @@ EOF
 conda create --name snippet python
 export CONDA_BUILD=1
 conda activate snippet
-conda install  nodejs go gcc_linux-64 gxx_linux-64 jupyterlab zeromq
+conda install  nodejs go gcc_linux-64 gxx_linux-64 jupyterlab zeromq make
 
 # node
-sed -i install/tgz/package/binding.gup "s/#USERHOME#/$HOME/g"
-cd install/tgz/package; npm pack; mv zeromq.5.4.3.tgz ../; cd -;
+cd install/tgz/package; npm pack; mv zeromq-5.3.1.tgz ../; cd -;
 cd install/tgz; 
 npm install -g jp-kernel-2.0.0.tgz; npm install -g zeromq-5.3.1.tgz; npm install -g ijavascript-5.2.1.tgz; npm install -g jmp-2.0.0.tgz;
 
