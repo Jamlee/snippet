@@ -27,7 +27,7 @@ EOF
 conda create --name snippet python
 export CONDA_BUILD=1
 conda activate snippet
-conda install  nodejs go gcc_linux-64 gxx_linux-64 jupyter-lab zeromq
+conda install  nodejs go gcc_linux-64 gxx_linux-64 jupyterlab zeromq
 
 # node
 sed -i install/tgz/package/binding.gup "s/#USERHOME#/$HOME/g"
