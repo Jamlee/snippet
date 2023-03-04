@@ -2,7 +2,7 @@
 
 ```bash
 wget https://mirrors.bfsu.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh -p /data/miniconda3 -b
 
 cat > ~/.condarc <<EOF
 channels:
