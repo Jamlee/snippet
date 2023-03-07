@@ -30,6 +30,8 @@ conda activate snippet
 conda install  nodejs go gcc_linux-64 gxx_linux-64 jupyterlab zeromq make
 
 # node
+# sudo apt install python2 
+# npm config set python  /usr/bin/python2
 cd install/tgz/package; npm pack; mv zeromq-5.3.1.tgz ../; cd -;
 cd install/tgz; 
 npm install -g jp-kernel-2.0.0.tgz; npm install -g zeromq-5.3.1.tgz; npm install -g ijavascript-5.2.1.tgz; npm install -g jmp-2.0.0.tgz;
