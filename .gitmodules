@@ -1,9 +1,0 @@
-[submodule "project"]
-	path = project
-	url = git@e.coding.net:jamlee/snippet-project/snippet-project.git
-        branch = master
-
-[submodule "note"]
-	path = note
-	url = git@github.com:Jamlee/note.git
-        branch = main
